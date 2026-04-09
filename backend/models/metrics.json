@@ -1,0 +1,82 @@
+{
+  "selected_model": "Ridge",
+  "dataset_path": "data/synthetic_blood_timeseries.csv",
+  "model_path": "models/demand_model.joblib",
+  "metrics_path": "models/metrics.json",
+  "train_rows": 28224,
+  "validation_rows": 6048,
+  "test_rows": 6048,
+  "validation_results": [
+    {
+      "model_name": "RandomForestRegressor",
+      "mae": 3.816,
+      "rmse": 4.446,
+      "r2": 0.698
+    },
+    {
+      "model_name": "Ridge",
+      "mae": 1.773,
+      "rmse": 2.214,
+      "r2": 0.925
+    }
+  ],
+  "test_metrics": {
+    "mae": 1.784,
+    "rmse": 2.235,
+    "r2": 0.893
+  },
+  "example_predictions": [
+    {
+      "state": "Telangana",
+      "district": "Warangal",
+      "blood_group": "AB-",
+      "actual_demand_next_7d_units": 17,
+      "predicted_demand_next_7d_units": 18.1
+    },
+    {
+      "state": "Karnataka",
+      "district": "Bengaluru Urban",
+      "blood_group": "B-",
+      "actual_demand_next_7d_units": 33,
+      "predicted_demand_next_7d_units": 35.7
+    },
+    {
+      "state": "Uttar Pradesh",
+      "district": "Kanpur",
+      "blood_group": "B-",
+      "actual_demand_next_7d_units": 33,
+      "predicted_demand_next_7d_units": 30.7
+    },
+    {
+      "state": "Telangana",
+      "district": "Warangal",
+      "blood_group": "A+",
+      "actual_demand_next_7d_units": 23,
+      "predicted_demand_next_7d_units": 26.4
+    },
+    {
+      "state": "Maharashtra",
+      "district": "Mumbai",
+      "blood_group": "O+",
+      "actual_demand_next_7d_units": 49,
+      "predicted_demand_next_7d_units": 47.5
+    }
+  ],
+  "feature_columns": [
+    "state",
+    "district",
+    "blood_group",
+    "center_type",
+    "current_stock_units",
+    "expiring_72h_units",
+    "issued_last_7d_units",
+    "collected_last_7d_units",
+    "hospital_occupancy_pct",
+    "dengue_season_flag",
+    "holiday_flag",
+    "month",
+    "day_of_week",
+    "week_of_year"
+  ],
+  "target_column": "demand_next_7d_units"
+}
