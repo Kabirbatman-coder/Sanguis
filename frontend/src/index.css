@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-canvas font-body text-ink antialiased;
+  }
+
+  button,
+  input,
+  select {
+    @apply font-body;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-[28px] border border-white/65 bg-white/80 shadow-panel backdrop-blur;
+  }
+
+  .section-kicker {
+    @apply text-[11px] font-semibold uppercase tracking-[0.3em] text-lagoon/70;
+  }
+
+  .section-title {
+    @apply font-display text-3xl leading-tight text-ink sm:text-4xl;
+  }
+
+  .section-copy {
+    @apply max-w-2xl text-sm leading-6 text-slate-600 sm:text-base;
+  }
+
+  .input-shell {
+    @apply h-12 w-full rounded-2xl border border-[#eadacf] bg-[#fffdfb] px-4 text-sm text-slate-700 outline-none transition focus:border-rose/50 focus:ring-4 focus:ring-rose/10;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-wine via-rose to-coral px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-panel disabled:cursor-wait disabled:opacity-70;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center rounded-full border border-[#e4d6ca] bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-rose/40 hover:text-wine;
+  }
+
+  .page-enter {
+    animation: page-enter 420ms ease both;
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
